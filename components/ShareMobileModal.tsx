@@ -2,14 +2,14 @@
 
 import useModalStore from '@/store/ModalStore'
 
-const ShareModal = () => {
-	const [isOpen, closeModal] = useModalStore((state) => [
-		state.isOpen,
-		state.closeModal,
-	])
+const ShareMobileModal = () => {
+	const closeModal = useModalStore((state) => state.closeModal)
 	return (
-		<div className='px-8 py-6 bg-darkGrayishBlue flex justify-between items-center overflow-hidden rounded-b-2xl shadow-xl md:hidden'>
-			<div className='flex gap-5 items-center'>
+		<div
+			className='px-8 py-6 bg-darkGrayishBlue flex justify-between items-center overflow-hidden rounded-b-2xl shadow-xl md:hidden'
+			role='dialog'
+			aria-modal={true}>
+			<div className='flex gap-5 items-center flex-wrap'>
 				<h3 className='text-sm tracking-[5px] uppercase text-grayishBlue'>
 					Share
 				</h3>
@@ -66,4 +66,4 @@ const ShareModal = () => {
 		</div>
 	)
 }
-export default ShareModal
+export default ShareMobileModal
